@@ -1,13 +1,13 @@
 
 ## Introduction
 
-This project queries an elasticsearch index containing a set of GitHub issue and calculate a 4 weeks rolling average of weekly completion velocity. This provides an trends on a project's team pace and helps identify variations over long running projects.
+This project queries an elasticsearch index containing a set of publicly available GitHub issues and calculates a 4 weeks rolling average of weekly completion velocity (based on closed date). This provides a trends on a project's team pace and helps identify variations over long running projects.
 
 One area is built per fetched repository, each datapoint on the chart represent an average of the sum of closed issues, per week, over the previous 4 weeks.
 
 ## Run
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), main commands: 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), main commands:
 
 * To install all dependencies `npm install`
 * To run the project in development mode: `npm start` - [http://localhost:4000](http://localhost:4000)
@@ -54,7 +54,7 @@ Query parameters:
 
 This query sorts the result by last updated date starting from the most recent, meaning the initial load is expensive, but the following one could just fetch the updated issues.
 
-Note: GitHub's API has a rate limit based on cost of each call. This method of displaying data requires downloading everything from GitHub first.
+Note: GitHub's API has a rate limit based on cost of each call (https://developer.github.com/v4/guides/resource-limitations/). 
 
 ## Libraries
 

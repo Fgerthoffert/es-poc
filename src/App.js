@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import ReactGA from 'react-ga';
 
 import { withStyles } from '@material-ui/core/styles';
 
 import Velocity from './views/velocity/index.js';
+
+ReactGA.initialize('UA-1488177-23');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const styles = theme => ({
     root: {
