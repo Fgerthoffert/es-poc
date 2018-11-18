@@ -1,0 +1,46 @@
+{
+  "name": "es-poc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "@material-ui/icons": "^3.0.1",
+    "@rematch/core": "^1.0.6",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.4",
+    "elasticsearch": "^15.2.0",
+    "highcharts": "^6.2.0",
+    "highcharts-react-official": "^2.0.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-jsx-highstock": "^3.3.0",
+    "react-redux": "^5.1.1",
+    "react-scripts": "2.1.1",
+    "searchkit": "^2.3.1-alpha.4",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "PORT=4000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@storybook/react": "^4.1.0-alpha.3",
+    "@storybook/addon-actions": "^4.1.0-alpha.3",
+    "@storybook/addon-links": "^4.1.0-alpha.3",
+    "@storybook/addons": "^4.1.0-alpha.3",
+    "@babel/core": "^7.1.6"
+  }
+}
