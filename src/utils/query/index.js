@@ -7,31 +7,11 @@ const client = new es.Client({
 
 /*
 *
-* executeQuery() Executes a query towards an ElasticSearch instance
+* esSearch() Executes search query agains elastic search
 *
 * Arguments:
-* - query: The ES query string
-* - index: Elastic search index to query
-* - fields to be fetched
+* - query: The ES query json
 */
-export const executeQuery = async (query, index, fields) => {
-    console.log('Will Execute query: ' + JSON.stringify(query));
-    const response = await client.search({
-        index: index,
-        q: query,
-        _source: fields,
-        size: 40000,
-        filter_path: 'hits.hits.*'
-    });
-    console.log(response);
-    return response.hits.hits;
-};
-
 export const esSearch = (query) => {
   return client.search(query);
-/*
-  return new Promise((resolve, reject) => {
-      return client.search(query);
-    });
-*/
 };

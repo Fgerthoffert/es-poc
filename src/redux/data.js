@@ -1,5 +1,5 @@
 import { refreshVelocity } from '../utils/velocity/index.js';
-import { executeQuery, esSearch } from '../utils/query/index.js';
+import { esSearch } from '../utils/query/index.js';
 import { getRepoNames } from '../utils/misc/index.js';
 
 const getReposQuery = {
