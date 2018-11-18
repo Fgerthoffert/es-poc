@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 
 import { connect } from "react-redux";
 
@@ -10,11 +8,6 @@ import uuidv1 from "uuid/v1";
 
 import VelocityChart from './Chart.js';
 import LoadingIndicator from "./LoadingIndicator.js";
-
-const styles = theme => ({
-    root: {
-    },
-});
 
 class Velocity extends Component {
     constructor (props) {
@@ -33,15 +26,14 @@ class Velocity extends Component {
     };
 
     render() {
-        const { classes, velocity, loadingCount } = this.props;
-        console.log(loadingCount);
+        const { velocity, loadingCount } = this.props;
         if (loadingCount > 0) {
             return (
                 <LoadingIndicator />
             );
         } else {
             return (
-                <Paper className={classes.root} elevation={1}>
+                <Paper elevation={1}>
                     <VelocityChart series={this.getVelocityHighcharts(velocity)} />
                 </Paper>
             );
@@ -50,7 +42,8 @@ class Velocity extends Component {
 }
 
 Velocity.propTypes = {
-    classes: PropTypes.object.isRequired,
+    velocity: PropTypes.array.isRequired,
+    loadingCount: PropTypes.number.isRequired,
 };
 
 const mapState = state => ({
@@ -58,4 +51,4 @@ const mapState = state => ({
     loadingCount: state.data.loadingCount,
 });
 
-export default connect(mapState, null)(withStyles(styles)(Velocity));
+export default connect(mapState, null)(Velocity);

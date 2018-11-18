@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official'
@@ -61,7 +62,7 @@ class VelocityChart extends Component {
 }
 
 VelocityChart.propTypes = {
-    //classes: PropTypes.object.isRequired,
+    series: PropTypes.array.isRequired,
 };
 
 export default VelocityChart;

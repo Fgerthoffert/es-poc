@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from "react-redux";
 import ReactGA from 'react-ga';
-
-import { withStyles } from '@material-ui/core/styles';
 
 import Velocity from './views/velocity/index.js';
 
 ReactGA.initialize('UA-1488177-23');
 ReactGA.pageview(window.location.pathname + window.location.search);
-
-const styles = theme => ({
-    root: {
-
-    },
-});
 
 class App extends Component {
     componentDidMount() {
@@ -30,8 +24,12 @@ class App extends Component {
     }
 }
 
+App.propTypes = {
+    initIssues: PropTypes.func.isRequired,
+};
+
 const mapDispatch = dispatch => ({
     initIssues: dispatch.data.initIssues,
 });
 
-export default connect(null, mapDispatch)(withStyles(styles)(App));
+export default connect(null, mapDispatch)(App);

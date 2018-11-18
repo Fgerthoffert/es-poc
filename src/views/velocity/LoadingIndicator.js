@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 
 import { connect } from "react-redux";
 
 import Snackbar from "@material-ui/core/Snackbar";
 import LinearProgress from '@material-ui/core/LinearProgress';
-
-const styles = theme => ({
-    root: {
-    },
-});
 
 class LoadingIndicator extends Component {
     constructor (props) {
@@ -39,11 +33,11 @@ class LoadingIndicator extends Component {
 }
 
 LoadingIndicator.propTypes = {
-    classes: PropTypes.object.isRequired,
+    loadingMessage: PropTypes.string.isRequired,
 };
 
 const mapState = state => ({
   loadingMessage: state.data.loadingMessage,
 });
 
-export default connect(mapState, null)(withStyles(styles)(LoadingIndicator));
+export default connect(mapState, null)(LoadingIndicator);
