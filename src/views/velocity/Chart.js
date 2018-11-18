@@ -19,7 +19,7 @@ class VelocityChart extends Component {
                 selected: 5
             },
             title: {
-                text: 'Weekly velocity (4 weeks rolling average)'
+                text: 'Closed issues, weekly velocity (4 weeks rolling average)'
             },
             yAxis: {
                 title: {
